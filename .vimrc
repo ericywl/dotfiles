@@ -20,11 +20,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Syntax and color scheme 
-"set t_Co=256
-syntax on
-colorscheme onedark
-
 "" Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -38,6 +33,11 @@ Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
 call plug#end()
+
+" Syntax and color scheme 
+"set t_Co=256
+syntax on
+colorscheme onedark
 
 
 " ==========
@@ -76,20 +76,15 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-
   augroup END
-
 else
-
   set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
 " Add optional packages.
