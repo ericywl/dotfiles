@@ -212,7 +212,7 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 
 # Use feh to set wallpaper
 exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id /usr/bin/feh --bg-scale '/usr/share/wallpapers/Breath/contents/images/2560x1440.png'
+exec --no-startup-id /usr/bin/feh --bg-scale '/home/ericywl/Pictures/breath.png'
 
 # DPI setting
 exec xrandr --dpi 120

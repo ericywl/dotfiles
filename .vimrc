@@ -20,7 +20,27 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Syntax and color scheme 
+"set t_Co=256
+syntax on
+colorscheme onedark
 
+"" Vim-Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/sheerun/vim-polyglot.git'
+" Color schemes
+Plug 'dikiaap/minimalist'
+Plug 'joshdick/onedark.vim'
+call plug#end()
+
+
+" ==========
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
