@@ -39,6 +39,10 @@ font pango:Helvetica Neue, FontAwesome 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Constraint floating window size
+floating_minimum_size 1920 x 1080
+floating_maximum_size 2500 x 1360
+
 # Start a terminal
 bindsym $mod+c exec konsole 
 
@@ -206,4 +210,5 @@ for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 
+# Use feh to set wallpaper
 exec /usr/bin/feh --bg-scale '/usr/share/wallpapers/Breath/contents/images/2560x1440.png'
