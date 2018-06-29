@@ -30,7 +30,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Helvetica Neue, FontAwesome 11
+#font pango:Helvetica Neue, FontAwesome 11
+font pango:Source Sans Pro 11
  
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -40,8 +41,7 @@ font pango:Helvetica Neue, FontAwesome 11
 floating_modifier $mod
 
 # Constraint floating window size
-floating_minimum_size 1920 x 1080
-floating_maximum_size 2500 x 1360
+floating_maximum_size 2550 x 1330
 
 # Start a terminal
 bindsym $mod+c exec konsole 
@@ -51,8 +51,8 @@ bindsym $mod+Shift+q kill
 
 
 # rofi
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "IBM Plex Sans Medium 15" '
-bindsym $mod+r exec rofi -show run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Source Sans Pro 15" '
+bindsym $mod+r exec --no-startup-id rofi -show run -font "Source Sans Pro 15"
 # Screenshot (now provided by Plasma)
 # bindsym Print exec --no-startup-id spectacle
 
@@ -211,4 +211,5 @@ for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 
 # Use feh to set wallpaper
-exec /usr/bin/feh --bg-scale '/usr/share/wallpapers/Breath/contents/images/2560x1440.png'
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id /usr/bin/feh --bg-scale '/usr/share/wallpapers/Breath/contents/images/2560x1440.png'
