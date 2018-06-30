@@ -1,21 +1,21 @@
-" Mouse support
+"" Mouse support
 set mouse=a
 set ttymouse=xterm2
 
-" System clipboard
+"" System clipboard
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
 
-" Disable markdown folding
+"" Disable markdown folding
 let g:vim_markdown_folding_disabled = 1
 
-" Set backup and undo directory
+"" Set backup and undo directory
 set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
-" Set tabs to 4 spaces
+"" Set tabs to 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -34,11 +34,11 @@ Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
 call plug#end()
 
-" Syntax and color scheme 
-"set t_Co=256
+"" Syntax and color scheme 
 syntax on
 colorscheme onedark
-
+" .conf file syntax highlight
+autocmd BufRead,BufNewFile *.conf setf dosini
 
 " ==========
 " An example for a vimrc file.
