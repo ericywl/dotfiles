@@ -129,6 +129,8 @@ syntax on
 colorscheme wal
 " compton.conf file syntax highlight
 autocmd BufRead,BufNewFile compton.conf setf dosini
+" Override line number color
+highlight LineNr ctermfg=238 guifg=#4b5263
 
 "" Goyo settings 
 " Auto-start Goyo

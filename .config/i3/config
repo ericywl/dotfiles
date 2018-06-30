@@ -190,7 +190,7 @@ bindsym $mod+t mode "resize"
 #        }
 #}
 
-# Starting things with i3
+## Starting things with i3
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
 exec --no-startup-id compton --config ~/.config/compton.conf
 exec xrandr --dpi 120
