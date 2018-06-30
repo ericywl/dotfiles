@@ -80,8 +80,23 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"" Toggle line numbers
-noremap <F3> :set number! number?<CR>
+"" Toggle line numbers and relative line numbers
+function! s:toggle_number()
+  set number! relativenumber! relativenumber?
+  if &number
+    augroup relnumtoggle
+      autocmd!
+      autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+      autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    augroup END   
+  else
+    augroup relnumtoggle
+      autocmd!
+    augroup END
+  endif
+endfunction
+
+noremap <silent> <F3> :call <SID>toggle_number()<CR>
 
 "" Toggle highlighting and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
@@ -104,18 +119,20 @@ Plug 'itchyny/lightline.vim'
 " Color schemes 
 Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
+Plug 'dylanaraps/wal.vim'
 " Distraction-free
 Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "" Syntax and color scheme 
 syntax on
-colorscheme onedark
+colorscheme wal
 " compton.conf file syntax highlight
 autocmd BufRead,BufNewFile compton.conf setf dosini
 
 "" Goyo settings 
-autocmd VimEnter * Goyo 
+" Auto-start Goyo
+autocmd VimEnter * Goyo | highlight StatusLineNC ctermfg=white 
 
 function! s:goyo_enter()
   let b:quitting = 0
