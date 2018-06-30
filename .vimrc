@@ -1,46 +1,3 @@
-"" Mouse support
-set mouse=a
-set ttymouse=xterm2
-
-"" System clipboard
-inoremap <C-v> <ESC>"+pa
-vnoremap <C-c> "+y
-vnoremap <C-d> "+d
-
-"" Disable markdown folding
-let g:vim_markdown_folding_disabled = 1
-
-"" Set backup and undo directory
-set backupdir=/tmp//
-set directory=/tmp//
-set undodir=/tmp//
-
-"" Set tabs to 4 spaces
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-"" Vim-Plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/sheerun/vim-polyglot.git'
-" Color schemes
-Plug 'dikiaap/minimalist'
-Plug 'joshdick/onedark.vim'
-call plug#end()
-
-"" Syntax and color scheme 
-syntax on
-colorscheme onedark
-" .conf file syntax highlight
-autocmd BufRead,BufNewFile *.conf setf dosini
-
-" ==========
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -71,7 +28,7 @@ endif
 
 if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
-  set hlsearch
+  " set hlsearch
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -96,3 +53,89 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
+"============="
+" My Settings "
+"============="
+
+"" Mouse support
+set mouse=a
+set ttymouse=xterm2
+
+"" System clipboard
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+vnoremap <C-d> "+d
+
+"" Disable markdown folding
+let g:vim_markdown_folding_disabled = 1
+
+"" Set backup and undo directory
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
+"" Set tabs to 4 spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"" Toggle line numbers
+noremap <F3> :set number! number?<CR>
+
+"" Toggle highlighting and show current value.
+noremap <F4> :set hlsearch! hlsearch?<CR>
+
+"" Show status line (does not work with Goyo)
+" set laststatus=2
+
+"" Vim-Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+" Syntax
+Plug 'https://github.com/sheerun/vim-polyglot.git'
+" Status line
+Plug 'itchyny/lightline.vim'
+" Color schemes 
+Plug 'dikiaap/minimalist'
+Plug 'joshdick/onedark.vim'
+" Distraction-free
+Plug 'junegunn/goyo.vim'
+call plug#end()
+
+"" Syntax and color scheme 
+syntax on
+colorscheme onedark
+" compton.conf file syntax highlight
+autocmd BufRead,BufNewFile compton.conf setf dosini
+
+"" Goyo settings 
+autocmd VimEnter * Goyo 
+
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+

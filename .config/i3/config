@@ -192,7 +192,14 @@ bindsym $mod+t mode "resize"
 
 # Starting things with i3
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
+exec --no-startup-id compton --config ~/.config/compton.conf
+exec xrandr --dpi 120
 for_window [class="yakuake"] floating enable;
+
+# Use feh to set wallpaper
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id /usr/bin/feh --bg-scale '/home/ericywl/Pictures/breath.png'
+
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
@@ -209,10 +216,3 @@ for_window [class="krunner"] floating enable; border none
 for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
-
-# Use feh to set wallpaper
-exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/ericywl/Pictures/breath.png'
-
-# DPI setting
-exec xrandr --dpi 120
