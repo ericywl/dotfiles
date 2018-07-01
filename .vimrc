@@ -67,8 +67,10 @@ inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
 
-"" Disable markdown folding
-let g:vim_markdown_folding_disabled = 1
+"" Matching parentheses etc.
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
 
 "" Set backup and undo directory
 set backupdir=/tmp//
@@ -135,16 +137,6 @@ autocmd VimLeave * :silent exec "!konsoleprofile terminalMargin=16"
 "" Show status line 
 set laststatus=2
 set noshowmode
-
-"" Lightline settings
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ 
-      \         [ 'mode', 'paste' ], 
-      \         [ 'readonly', 'absolutepath', 'modified' ] 
-      \     ],
-      \ }
-      \ }
 
 
 "================="

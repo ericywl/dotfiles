@@ -6,6 +6,7 @@ LineSpacing=1
 [General]
 Name=Shell
 Parent=FALLBACK/
+ShowTerminalSizeHint=false
 TerminalMargin=16
 
 [Scrolling]
