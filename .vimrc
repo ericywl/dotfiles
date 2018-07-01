@@ -119,8 +119,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
 Plug 'dylanaraps/wal.vim'
-" Distraction-free
-Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "" Syntax and color scheme 
@@ -131,42 +129,11 @@ autocmd BufRead,BufNewFile compton.conf setf dosini
 " Override line number color
 highlight LineNr ctermfg=238 guifg=#4b5263
 
+"" Change terminal margin when entering Vim
 autocmd VimEnter * :silent exec "!konsoleprofile terminalMargin=80"
 autocmd VimLeave * :silent exec "!konsoleprofile terminalMargin=16"
 
 "" Show status line 
 set laststatus=2
 set noshowmode
-
-
-"================="
-" Unused Settings "
-"================="
-
-"" Goyo settings 
-" Auto-start Goyo
-"autocmd VimEnter * Goyo | highlight StatusLineNC ctermfg=white 
-"
-"function! s:goyo_enter()
-"  let b:quitting = 0
-"  let b:quitting_bang = 0
-"  autocmd QuitPre <buffer> let b:quitting = 1
-"  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-"endfunction
-"
-"function! s:goyo_leave()
-"  " Quit Vim if this is the only remaining buffer
-"  if b:quitting && \
-"    len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-"    if b:quitting_bang
-"      qa!
-"    else
-"      qa
-"    endif
-"  endif
-"endfunction
-"
-"autocmd! User GoyoEnter call <SID>goyo_enter()
-"autocmd! User GoyoLeave call <SID>goyo_leave()
-
 

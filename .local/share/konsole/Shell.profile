@@ -8,6 +8,7 @@ Name=Shell
 Parent=FALLBACK/
 ShowTerminalSizeHint=false
 TerminalMargin=16
+TerminalCenter=true
 
 [Scrolling]
 ScrollBarPosition=1
