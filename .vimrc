@@ -101,9 +101,6 @@ noremap <silent> <F3> :call <SID>toggle_number()<CR>
 "" Toggle highlighting and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
 
-"" Show status line (does not work with Goyo)
-" set laststatus=2
-
 "" Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -122,6 +119,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'dylanaraps/wal.vim'
 " Distraction-free
 Plug 'junegunn/goyo.vim'
+" Parenthesis helper
+Plug 'tpope/vim-surround'
 call plug#end()
 
 "" Syntax and color scheme 
@@ -132,29 +131,52 @@ autocmd BufRead,BufNewFile compton.conf setf dosini
 " Override line number color
 highlight LineNr ctermfg=238 guifg=#4b5263
 
+autocmd VimEnter * :silent exec "!konsoleprofile terminalMargin=80"
+autocmd VimLeave * :silent exec "!konsoleprofile terminalMargin=16"
+
+"" Show status line 
+set laststatus=2
+set noshowmode
+
+"" Lightline settings
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ 
+      \         [ 'mode', 'paste' ], 
+      \         [ 'readonly', 'absolutepath', 'modified' ] 
+      \     ],
+      \ }
+      \ }
+
+
+"================="
+" Unused Settings "
+"================="
+
 "" Goyo settings 
 " Auto-start Goyo
-autocmd VimEnter * Goyo | highlight StatusLineNC ctermfg=white 
-
-function! s:goyo_enter()
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
+"autocmd VimEnter * Goyo | highlight StatusLineNC ctermfg=white 
+"
+"function! s:goyo_enter()
+"  let b:quitting = 0
+"  let b:quitting_bang = 0
+"  autocmd QuitPre <buffer> let b:quitting = 1
+"  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+"endfunction
+"
+"function! s:goyo_leave()
+"  " Quit Vim if this is the only remaining buffer
+"  if b:quitting && \
+"    len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+"    if b:quitting_bang
+"      qa!
+"    else
+"      qa
+"    endif
+"  endif
+"endfunction
+"
+"autocmd! User GoyoEnter call <SID>goyo_enter()
+"autocmd! User GoyoLeave call <SID>goyo_leave()
 
 
