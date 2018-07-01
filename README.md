@@ -25,4 +25,4 @@ The wallpaper is set with `feh` (delay this if you still notice problems) in `.c
 ### Launcher
 Rofi (themed in `.Xresources`), started in i3 with `$mod+d` for menu or `$mod+r` for run command.
 
-#### _Credits to [avivace](https://github.com/avivace/dotfiles)
+#### _Credits to [avivace](https://github.com/avivace/dotfiles)_
