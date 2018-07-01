@@ -1,5 +1,6 @@
 # Linux dotfiles
 
+### Setup
 - **OS**: Manjaro
 - **DE**: KDE
 - **WM**: i3-gaps
