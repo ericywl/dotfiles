@@ -119,8 +119,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'dylanaraps/wal.vim'
 " Distraction-free
 Plug 'junegunn/goyo.vim'
-" Parenthesis helper
-Plug 'tpope/vim-surround'
 call plug#end()
 
 "" Syntax and color scheme 
