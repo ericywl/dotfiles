@@ -196,8 +196,8 @@ bindsym $mod+t mode "resize"
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
 
 # Use feh to set wallpaper
-exec --no-startup-id /usr/bin/feh --bg-scale '~/Pictures/wallpaper.jpg'
-exec --no-startup-id /usr/bin/feh --bg-scale '~/Pictures/wallpaper.png'
+exec --no-startup-id /usr/bin/feh --bg-scale '/home/eric/Pictures/wallpaper.jpg'
+#exec --no-startup-id /usr/bin/feh --bg-scale '/home/eric/Pictures/wallpaper.png'
 
 
 ## Plasma Integration
