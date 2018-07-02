@@ -154,7 +154,7 @@ bindsym $mod+Shift+e exec "qdbus org.kde.ksmserver /KSMServer logout 1 2 2"
 # bindsym XF86AudioLowerVolume exec ~/audio.sh --down
 # bindsym XF86AudioRaiseVolume exec ~/audio.sh --up
 
-# resize window (you can also use the mouse for that)
+# Resize window (or $mod+rightclick)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
