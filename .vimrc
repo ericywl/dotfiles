@@ -130,7 +130,7 @@ autocmd BufRead,BufNewFile compton.conf setf dosini
 highlight LineNr ctermfg=238 guifg=#4b5263
 
 "" Change terminal margin when entering Vim
-autocmd VimEnter * :silent exec "!konsoleprofile terminalMargin=80"
+autocmd VimEnter * :silent exec "!konsoleprofile terminalMargin=70"
 autocmd VimLeave * :silent exec "!konsoleprofile terminalMargin=16"
 
 "" Show status line 

@@ -1,0 +1,4 @@
+[core]
+	excludesfile = /home/eric/.gitignore_global
+[credential]
+	helper = cache --timeout=7200

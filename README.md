@@ -5,7 +5,14 @@
 - **DE**: KDE
 - **WM**: i3-gaps
 
-### Disabling the Plasma Desktop and the Plasma Wallpaper
+### Depencies (assuming KDE)
+- i3-gaps
+- rofi
+- wmctrl
+- feh
+- compton
+
+### Disabling the Plasma Desktop and Wallpaper
 The Plasma wallpaper is rendered at the top, hiding everything. Disable the autostart of `ksplashqml`:
 
 ```

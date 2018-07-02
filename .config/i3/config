@@ -50,7 +50,7 @@ bindsym $mod+c exec konsole
 bindsym $mod+Shift+q kill
 
 
-# rofi
+# Rofi
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Source Sans Pro 15" '
 bindsym $mod+r exec --no-startup-id rofi -show run -font "Source Sans Pro 15"
 # Screenshot (now provided by Plasma)
@@ -196,8 +196,8 @@ bindsym $mod+t mode "resize"
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
 
 # Use feh to set wallpaper
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/ericywl/Pictures/wallpaper.jpg'
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/ericywl/Pictures/wallpaper.png'
+exec --no-startup-id /usr/bin/feh --bg-scale '~/Pictures/wallpaper.jpg'
+exec --no-startup-id /usr/bin/feh --bg-scale '~/Pictures/wallpaper.png'
 
 
 ## Plasma Integration
