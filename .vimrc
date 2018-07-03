@@ -106,7 +106,7 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 "" Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -126,8 +126,9 @@ call plug#end()
 "" Syntax and color scheme 
 syntax on
 colorscheme wal
-" compton.conf file syntax highlight
+" Odd files syntax highlight
 autocmd BufRead,BufNewFile compton.conf setf dosini
+autocmd BufRead,BufNewFile *.rasi setf css
 " Override line number color
 highlight LineNr ctermfg=238 guifg=#4b5263
 
