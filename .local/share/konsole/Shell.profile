@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=Illuminati
+ColorScheme=Artsie
 Font=DejaVu Sans Mono,13,-1,5,50,0,0,0,0,0,Book
 LineSpacing=1
 
