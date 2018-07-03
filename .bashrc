@@ -144,3 +144,6 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 # alias for lockscreen
 alias leave="qdbus org.kde.screensaver /ScreenSaver Lock"
 
+# variable for AUR PKGBUILD editor
+export VISUAL="vim"
+

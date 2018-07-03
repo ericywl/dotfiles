@@ -1,6 +1,6 @@
 #!/bin/bash
 
-xrdb ~/.Xresources
+xrdb $HOME/.Xresources
 xrandr --dpi 120
 
 # Force KDE environment when running i3

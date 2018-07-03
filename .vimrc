@@ -119,6 +119,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'dikiaap/minimalist'
 Plug 'joshdick/onedark.vim'
 Plug 'dylanaraps/wal.vim'
+" Parentheses control
+Plug 'tpope/vim-surround'
 call plug#end()
 
 "" Syntax and color scheme 
