@@ -83,25 +83,28 @@ set shiftwidth=4
 set expandtab
 
 "" Toggle line numbers and relative line numbers
+let s:toggle_state = 0
 function! s:toggle_number()
-  set number! relativenumber! relativenumber?
-  if &number
-    augroup relnumtoggle
-      autocmd!
-      autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-      autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-    augroup END   
-  else
-    augroup relnumtoggle
-      autocmd!
-    augroup END
-  endif
+    if s:toggle_state == 0
+        set number norelativenumber
+        echom 'number'
+        let s:toggle_state = 1
+    elseif s:toggle_state == 1
+        set number relativenumber 
+        echom 'relativenumber'
+        let s:toggle_state = 2
+    else
+        set nonumber norelativenumber 
+        echom 'nonumber'
+        let s:toggle_state = 0
+    endif
 endfunction
 
+set nonumber norelativenumber
 noremap <silent> <F3> :call <SID>toggle_number()<CR>
 
 "" Toggle highlighting and show current value.
-noremap <F4> :set hlsearch! hlsearch?<CR>
+noremap <silent> <F4> :set hlsearch! hlsearch?<CR>
 
 "" Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -133,10 +136,11 @@ autocmd BufRead,BufNewFile *.rasi setf css
 highlight LineNr ctermfg=238 guifg=#4b5263
 
 "" Change terminal margin when entering Vim
-autocmd VimEnter * :silent exec "!konsoleprofile terminalMargin=70"
-autocmd VimLeave * :silent exec "!konsoleprofile terminalMargin=16"
+"autocmd VimEnter * :silent exec "!konsoleprofile terminalMargin=70"
+"autocmd VimLeave * :silent exec "!konsoleprofile terminalMargin=16"
 
 "" Show status line 
 set laststatus=2
 set noshowmode
+
 

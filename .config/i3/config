@@ -6,24 +6,24 @@ gaps inner 10
 gaps outer 0
 #smart_gaps on
 
-set $black       #212121
-set $darkblack   #000000
-set $red         #fb4934
-set $darkred     #cc241d
-set $green       #b8bb26
-set $darkgreen   #98971a
-set $yellow      #fabd2f
-set $darkyellow  #d79921
-set $blue        #83a598
-set $darkblue    #458588
-set $magenta     #d3869b
-set $darkmagenta #b16286
-set $cyan        #8ec07c
-set $darkcyan    #689d6a
-set $white       #ebdbb2
-set $darkwhite   #a89984
-set $background  #293f34
-set $transparent #00000077
+#set $black       #212121
+#set $darkblack   #000000
+#set $red         #fb4934
+#set $darkred     #cc241d
+#set $green       #b8bb26
+#set $darkgreen   #98971a
+#set $yellow      #fabd2f
+#set $darkyellow  #d79921
+#set $blue        #83a598
+#set $darkblue    #458588
+#set $magenta     #d3869b
+#set $darkmagenta #b16286
+#set $cyan        #8ec07c
+#set $darkcyan    #689d6a
+#set $white       #ebdbb2
+#set $darkwhite   #a89984
+#set $background  #293f34
+#set $transparent #00000077
 
 # Windows button
 set $mod Mod4
