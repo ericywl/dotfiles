@@ -10,34 +10,41 @@
 
 
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
-  emphasis:   #50536b;
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
+  black:      #1e2127;
+  red:        #e06c75;
+  green:      #98c379;
+  yellow:     #d19a66;
+  blue:       #61afef;
+  mangenta:   #c678dd;
+  cyan:       #56b6c2;
+  emphasis:   #5c6370;
+  text:       #ffffff;
+  text-alt:   #abb2bf;
   fg:         #abb2bf;
-  bg:         #282c34;
+  bg:         #252a2f;
 
   spacing: 0;
   background-color: transparent;
 
-  font: "Knack Nerd Font 14";
+  font: "Knack Nerd Font 15";
   text-color: @text;
 }
 
 window {
+  width: 35%;
   transparency: "real";
-  fullscreen: true;
-  background-color: #282c34dd;
+  background-color: #252a2fdd;
+}
+
+listview {
+  lines: 8;
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: false;
 }
 
 mainbox {
-  padding: 30% 30%;
+  padding: 20px 20px;
 }
 
 inputbar {
@@ -59,17 +66,10 @@ entry {
   margin: 0px 10px;
 }
 
-listview {
-  spacing: 5px;
-  dynamic: true;
-  scrollbar: false;
-}
-
 element {
   padding: 5px;
-  text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
-  border-radius: 3px;
+  text-color: @green;
+  highlight: bold #d19a66;
 }
 
 element selected {
@@ -82,7 +82,7 @@ element urgent, element selected urgent {
 }
 
 element active, element selected active {
-  text-color: @purple;
+  text-color: @magenta;
 }
 
 message {
