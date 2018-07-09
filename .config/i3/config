@@ -56,7 +56,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -fo
 bindsym $mod+r exec --no-startup-id rofi -show run -font "Source Sans Pro 15"
 
 # Krunner
-bindsym $mod+Space exec --
+bindsym $mod+space exec krunner
 
 # Change focus
 bindsym $mod+h focus left
