@@ -77,6 +77,9 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
+"" Set textwidth to 80
+set textwidth=80
+
 "" Set tabs to 4 spaces
 set tabstop=4
 set shiftwidth=4
