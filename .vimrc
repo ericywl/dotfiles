@@ -127,6 +127,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'dylanaraps/wal.vim'
 " Parentheses control
 Plug 'tpope/vim-surround'
+" Markdown
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 "" Syntax and color scheme 
@@ -146,4 +148,5 @@ highlight LineNr ctermfg=238 guifg=#4b5263
 set laststatus=2
 set noshowmode
 
-
+"" Disable vim-markdown folding
+let g:vim_markdown_folding_disabled = 1
